@@ -1,26 +1,67 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+   --background: #ffffff;
+   --foreground: #171717;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+   --color-background: var(--background);
+   --color-foreground: var(--foreground);
+   --font-sans: var(--font-geist-sans);
+   --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+   :root {
+      --background: #0a0a0a;
+      --foreground: #ededed;
+   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+   background: var(--background);
+   color: var(--foreground);
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+.botao {
+   @apply flex justify-center gap-2;
+   @apply px-6 py-2.5 rounded-md;
+}
+
+.botao.azul {
+   @apply bg-blue-500 hover:bg-blue-600 text-white;
+}
+
+.botao.verde {
+   @apply bg-green-500 hover:bg-green-600 text-white;
+}
+
+.botao.vermelho {
+   @apply bg-red-500 hover:bg-red-600 text-white;
+}
+
+.botao.cinza {
+   @apply bg-zinc-500 hover:bg-zinc-500 text-white;
+}
+
+.input {
+   @apply bg-zinc-900 text-white rounded-md px-4 py-2 border border-zinc-700;
+}
+
+.container {
+   @apply flex flex-col justify-center items-center;
+}
+
+.exercicio {
+   @apply bg-zinc-900 rounded-lg overflow-hidden;
+}
+
+.exercicio h1 {
+   @apply text-3xl font-black px-10 py-5 bg-zinc-800;
+}
+
+.exercicio .conteudo {
+   @apply flex flex-col p-5 text-xl;
 }
